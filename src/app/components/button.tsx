@@ -7,5 +7,23 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-const Button = (props: ButtonProps) => {};
+const Button = (props: ButtonProps) => {
+  const { height, width, buttonstyle, target, children, ...others } = props;
+  return (
+    <button
+      style={{
+        height: `${height}px`,
+        width: `${width}px`,
+      }}
+      onClick={() => {
+        if (target) {
+          window.location.href = target;
+        }
+      }}
+      {...others}
+    >
+      {children}
+    </button>
+  );
+};
 export default Button;
