@@ -1,4 +1,6 @@
 // ボタン用のコンポーネント
+
+"use client";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   height: number;
   width: number;
