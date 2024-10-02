@@ -1,12 +1,10 @@
 // ボタン用のコンポーネント
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   height: number;
   width: number;
-  style: "fill" | "outline" | "none";
-  type?: "button" | "submit";
-  className?: string;
+  buttonstyle: "fill" | "outline" | "none";
   target?: string;
-  onClick?: () => void;
+  children: React.ReactNode;
 }
 
 const Button = (props: ButtonProps) => {};
