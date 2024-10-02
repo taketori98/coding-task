@@ -5,9 +5,20 @@ export default function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <Button height={50} width={200} buttonstyle="fill">
-        ボタン
-      </Button>
+      <form>
+        <div className="formcontent">
+          <label htmlFor="name">Name: </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Input your Name"
+          />
+        </div>
+        <Button height={30} width={100} buttonstyle="fill" type="submit">
+          ボタン
+        </Button>
+      </form>
     </div>
   );
 }
