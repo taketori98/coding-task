@@ -18,7 +18,7 @@ export default function Home() {
     alert(JSON.stringify(data));
   return (
     <div>
-      <h1>Home</h1>
+      <h2>Home</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="formcontent">
           <label htmlFor="name">氏名: </label>
