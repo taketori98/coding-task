@@ -69,15 +69,25 @@ export default function Form() {
           </Button>
           <Button height={30} width={100} buttonstyle="fill" type="submit">
             登録する
+            <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+            />
+            <span className="material-symbols-outlined icon">send</span>
           </Button>
         </div>
         <Button
           height={30}
-          width={100}
+          width={120}
           buttonstyle="fill"
           type="button"
           target="../"
         >
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+          />
+          <span className="material-symbols-outlined icon">home</span>
           トップに戻る
         </Button>
       </form>
