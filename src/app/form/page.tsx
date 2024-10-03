@@ -67,8 +67,8 @@ export default function Form() {
         </div>
         <div className="form-btn-container">
           <Button
-            height={30}
-            width={100}
+            height="2rem"
+            width="6rem"
             buttonstyle="outline"
             type="button"
             disabled={isResetting}
@@ -88,8 +88,8 @@ export default function Form() {
             {isResetting ? <div className="loading"></div> : "リセット"}
           </Button>
           <Button
-            height={30}
-            width={100}
+            height="2rem"
+            width="6rem"
             buttonstyle="fill"
             disabled={isSubmitting}
             type="submit"
@@ -111,8 +111,8 @@ export default function Form() {
       </form>
       <div className="form-btn-container">
         <Button
-          height={30}
-          width={120}
+          height="2rem"
+          width="8rem"
           buttonstyle="none"
           type="button"
           target="../"

@@ -4,8 +4,8 @@
 import "./button.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  height: number;
-  width: number;
+  height: string;
+  width: string;
   buttonstyle: "fill" | "outline" | "none";
   target?: string;
   children: React.ReactNode;
@@ -16,8 +16,8 @@ const Button = (props: ButtonProps) => {
   return (
     <button
       style={{
-        height: `${height}px`,
-        width: `${width}px`,
+        height: `${height}`,
+        width: `${width}`,
       }}
       className={`${buttonstyle}`}
       onClick={() => {

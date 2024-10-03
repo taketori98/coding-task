@@ -8,7 +8,7 @@ export default function Home() {
       <div className="container">
         <h3>ホーム</h3>
         <div className="container">
-          <Button height={30} width={120} buttonstyle="fill" target="/form">
+          <Button height="2rem" width="8rem" buttonstyle="fill" target="/form">
             会員登録
           </Button>
         </div>
