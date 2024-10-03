@@ -1,6 +1,7 @@
 "use client";
 
-import "../style.scss";
+import "../main.scss";
+import "./form.scss";
 import "../components/button.scss";
 import Button from "../components/button";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -32,7 +33,7 @@ export default function Form() {
   };
   return (
     <div className="container">
-      <h2>会員登録</h2>
+      <h3>会員登録</h3>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="formcontent">
           <fieldset>

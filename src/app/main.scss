@@ -1,0 +1,17 @@
+// 全ページ共通
+
+body {
+  background-color: #f6f6fa;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+div.container {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
