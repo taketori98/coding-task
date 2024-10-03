@@ -18,7 +18,7 @@ export default function Form() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormInput>();
+  } = useForm<FormInput>({ mode: "onChange" });
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setIsSubmitting(true);
     try {
