@@ -67,7 +67,7 @@ export default function Form() {
           >
             リセット
           </Button>
-          <Button height={30} width={100} buttonstyle="fill" type="submit">
+          <Button height={30} width={100} buttonstyle="outline" type="submit">
             登録する
             <link
               rel="stylesheet"
@@ -79,7 +79,7 @@ export default function Form() {
         <Button
           height={30}
           width={120}
-          buttonstyle="fill"
+          buttonstyle="none"
           type="button"
           target="../"
         >

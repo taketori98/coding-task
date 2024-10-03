@@ -17,6 +17,7 @@ const Button = (props: ButtonProps) => {
         height: `${height}px`,
         width: `${width}px`,
       }}
+      className={`button ${buttonstyle}`}
       onClick={() => {
         if (target) {
           window.location.href = target;
