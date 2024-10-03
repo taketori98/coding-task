@@ -8,23 +8,25 @@ button {
 .fill {
   color: white;
   background-color: black;
+  > .loading {
+    border: 0.25rem solid rgba(255, 255, 255, 0.2);
+    border-top-color: rgb(255, 255, 255);
+  }
 }
-
-.outline {
-  color: black;
-  background-color: white;
-  border: 1px solid black;
-}
-
+.outline,
 .none {
   color: black;
   background-color: white;
-  border: none;
+  > .loading {
+    border: 0.25rem solid rgba(0, 0, 0, 0.8);
+    border-top-color: rgba(0, 0, 0, 0.2);
+  }
 }
-
-span.icon {
-  vertical-align: middle;
-  font-size: 1.5em;
+.outline {
+  border: 1px solid black;
+}
+.none {
+  border: none;
 }
 
 @keyframes spin {
@@ -43,15 +45,4 @@ span.icon {
   text-align: center;
   vertical-align: middle;
   animation: spin 1s infinite linear;
-}
-
-button.fill > .loading {
-  border: 0.25rem solid rgba(255, 255, 255, 0.2);
-  border-top-color: rgb(255, 255, 255);
-}
-
-button.outline > .loading,
-button.none > .loading {
-  border: 0.25rem solid rgba(0, 0, 0, 0.8);
-  border-top-color: rgba(0, 0, 0, 0.2);
 }

@@ -1,8 +1,9 @@
 "use client";
 
-import "../style.css";
+import "../style.scss";
+import "../components/button.scss";
 import Button from "../components/button";
-import { useForm, SubmitHandler, set } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 
 interface FormInput {

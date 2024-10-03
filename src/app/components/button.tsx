@@ -1,6 +1,8 @@
 // ボタン用のコンポーネント
 
 "use client";
+import "./button.scss";
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   height: number;
   width: number;
@@ -17,7 +19,7 @@ const Button = (props: ButtonProps) => {
         height: `${height}px`,
         width: `${width}px`,
       }}
-      className={`button ${buttonstyle}`}
+      className={`${buttonstyle}`}
       onClick={() => {
         if (target) {
           window.location.href = target;
