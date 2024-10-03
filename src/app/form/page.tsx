@@ -41,6 +41,7 @@ export default function Form() {
               type="text"
               id="name"
               placeholder="例）日本太郎"
+              className={`${errors.name ? "error" : ""}`}
               {...register("name", { required: "名前を入力してください" })}
             />
             <p className="error-message">{errors.name?.message}</p>
@@ -51,6 +52,7 @@ export default function Form() {
               type="email"
               id="email"
               placeholder="例）example@mail.com"
+              className={`${errors.email ? "error" : ""}`}
               {...register("email", {
                 required: "メールアドレスは必須です。",
                 pattern: {

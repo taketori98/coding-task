@@ -30,6 +30,15 @@ input {
   border: solid 0.01rem rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
 }
+input.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  height: 0.8rem;
+  font-size: 0.8rem;
+}
 
 span.icon {
   vertical-align: middle;
