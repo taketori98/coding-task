@@ -69,7 +69,7 @@ export default function Form() {
             height={30}
             width={100}
             buttonstyle="outline"
-            type="reset"
+            type="button"
             disabled={isResetting}
             onClick={async () => {
               if (confirm("リセットしますか？")) {
@@ -79,8 +79,8 @@ export default function Form() {
                 if (form) {
                   form.reset();
                   alert("リセットしました");
-                  setIsResetting(false);
                 }
+                setIsResetting(false);
               }
             }}
           >
