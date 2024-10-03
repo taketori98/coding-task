@@ -2,7 +2,8 @@
 
 import "../style.css";
 import Button from "../components/button";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, set } from "react-hook-form";
+import { useState } from "react";
 
 interface FormInput {
   name: string;
@@ -10,13 +11,24 @@ interface FormInput {
 }
 
 export default function Form() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormInput>();
-  const onSubmit: SubmitHandler<FormInput> = (data) =>
-    alert(JSON.stringify(data));
+  const onSubmit: SubmitHandler<FormInput> = async (data) => {
+    setIsSubmitting(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      alert(JSON.stringify(data));
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div>
       <h2>会員登録</h2>
@@ -53,27 +65,43 @@ export default function Form() {
           <Button
             height={30}
             width={100}
-            buttonstyle="fill"
+            buttonstyle="outline"
             type="reset"
-            onClick={() => {
+            disabled={isResetting}
+            onClick={async () => {
               if (confirm("リセットしますか？")) {
+                setIsResetting(true);
+                await new Promise((resolve) => setTimeout(resolve, 1000));
                 const form = document.querySelector("form");
                 if (form) {
                   form.reset();
                   alert("リセットしました");
+                  setIsResetting(false);
                 }
               }
             }}
           >
-            リセット
+            {isResetting ? <div className="loading"></div> : "リセット"}
           </Button>
-          <Button height={30} width={100} buttonstyle="outline" type="submit">
-            登録する
-            <link
-              rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-            />
-            <span className="material-symbols-outlined icon">send</span>
+          <Button
+            height={30}
+            width={100}
+            buttonstyle="fill"
+            disabled={isSubmitting}
+            type="submit"
+          >
+            {isSubmitting ? (
+              <div className="loading"></div>
+            ) : (
+              <>
+                <link
+                  rel="stylesheet"
+                  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+                />
+                <span className="material-symbols-outlined icon">send</span>
+                登録する
+              </>
+            )}
           </Button>
         </div>
         <Button

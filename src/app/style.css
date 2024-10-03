@@ -1,5 +1,8 @@
 button {
   border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .fill {
@@ -22,4 +25,33 @@ button {
 span.icon {
   vertical-align: middle;
   font-size: 1.5em;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  animation: spin 1s infinite linear;
+}
+
+button.fill > .loading {
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgb(255, 255, 255);
+}
+
+button.outline > .loading,
+button.none > .loading {
+  border: 0.25rem solid rgba(0, 0, 0, 0.8);
+  border-top-color: rgba(0, 0, 0, 0.2);
 }
