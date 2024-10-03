@@ -1,4 +1,35 @@
+body {
+  background-color: #f6f6fa;
+}
+
+h2 {
+  text-align: center;
+}
+
+div.container {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 span.icon {
   vertical-align: middle;
   font-size: 1.5em;
+}
+
+div.form-btn-container {
+  display: flex;
+  justify-content: space-around;
 }

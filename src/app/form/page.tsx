@@ -31,12 +31,12 @@ export default function Form() {
     }
   };
   return (
-    <div>
+    <div className="container">
       <h2>会員登録</h2>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="formcontent">
-          <div>
-            <label htmlFor="name">氏名: </label>
+          <fieldset>
+            <label htmlFor="name">氏名</label>
             <input
               type="text"
               id="name"
@@ -44,9 +44,9 @@ export default function Form() {
               {...register("name", { required: "名前を入力してください" })}
             />
             <p className="error-message">{errors.name?.message}</p>
-          </div>
-          <div>
-            <label htmlFor="agree">メールアドレス: </label>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="agree">メールアドレス</label>
             <input
               type="email"
               id="email"
@@ -60,9 +60,9 @@ export default function Form() {
               })}
             />
             <p className="error-message">{errors.email?.message}</p>
-          </div>
+          </fieldset>
         </div>
-        <div>
+        <div className="form-btn-container">
           <Button
             height={30}
             width={100}
@@ -105,6 +105,8 @@ export default function Form() {
             )}
           </Button>
         </div>
+      </form>
+      <div className="form-btn-container">
         <Button
           height={30}
           width={120}
@@ -119,7 +121,7 @@ export default function Form() {
           <span className="material-symbols-outlined icon">home</span>
           トップに戻る
         </Button>
-      </form>
+      </div>
     </div>
   );
 }
