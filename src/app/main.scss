@@ -17,3 +17,15 @@ div.container {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (max-width: 959px) {
+  div.container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  div.container {
+    margin-top: 2rem;
+  }
+}
